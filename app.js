@@ -4,9 +4,7 @@ import vaccinationRoutes from './routes/vaccinationRoutes.js';
 import announcementRoutes from './routes/announcementRoutes.js';
 import cors from "cors";
 const app = express();
-app.use(cors({
-  origin: 'http://localhost:5173',  // ✅ Allow only your frontend origin
-}));
+app.use(cors());
 // Middleware
 app.use(express.json());
 

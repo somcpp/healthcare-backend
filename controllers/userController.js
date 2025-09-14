@@ -10,6 +10,15 @@ export const createUser = async (req, res) => {
   }
 };
 
+export const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
 export const getUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
